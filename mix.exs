@@ -15,7 +15,8 @@ defmodule Test.MixProject do
       ],
       # Docs
       name: "Test",
-      docs: docs()
+      docs: docs(),
+      escript: escript()
     ]
   end
 
@@ -51,5 +52,9 @@ defmodule Test.MixProject do
 
   def extras() do
     []
+  end
+
+  def escript do
+    [main_module: Test.CLI]
   end
 end
