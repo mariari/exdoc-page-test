@@ -86,4 +86,5 @@ defmodule Foo.MixProject do
     </script>
     """
   end
+  defp docs_before_closing_body_tag(_), do: ""
 end
