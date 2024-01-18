@@ -16,7 +16,7 @@ defmodule Foo do
 
   ## Examples
 
-      iex> Test.hello()
+      iex> Foo.hello()
       :world
 
   """
