@@ -146,7 +146,11 @@ jobs:
         if: ${{ steps.plt-cache.outputs.cache-hit != 'true' }}
         run: /bin/false
 
-      - name: Generate docs
-        run: |
-          mix docs
-          test -f doc/index.html && echo "doc/index.html exists."
+      - name: Build docs
+        uses: lee-dohm/generate-elixir-docs@v1
+      - name: Publish to Pages
+        uses: peaceiris/actions-gh-pages@v1.0.1
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_DIR: ./doc
+          PUBLISH_BRANCH: gh-pages
