@@ -17,7 +17,7 @@ runs:
       run: |
         mix deps.get
         mix escript.build
-        mv ex_doc ex_doc_otp_${{ inputs.otp }}
+        mv foo ex_doc_otp_${{ inputs.otp }}
         shasum -a 1 ex_doc_otp_${{ inputs.otp }} > ex-doc-otp-${{ inputs.otp }}.sha1sum
         shasum -a 256 ex_doc_otp_${{ inputs.otp }} > ex-doc-otp-${{ inputs.otp }}.sha256sum
         echo "$PWD/bin" >> $GITHUB_PATH
