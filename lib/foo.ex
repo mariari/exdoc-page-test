@@ -1,4 +1,4 @@
-defmodule Test do
+defmodule Foo do
   @moduledoc """
   Documentation for `Test`.
 

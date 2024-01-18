@@ -3,18 +3,18 @@ defmodule Test.MixProject do
 
   def project do
     [
-      app: :test,
-      version: "0.3.0",
+      app: :foo,
+      version: "0.4.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       dialyzer: [
-        plt_local_path: "plts/test.plt",
+        plt_local_path: "plts/foo.plt",
         plt_core_path: "plts/core.plt",
         flags: ["-Wno_improper_lists"]
       ],
       # Docs
-      name: "Test",
+      name: "Foo",
       docs: docs(),
       escript: escript()
     ]
@@ -55,6 +55,6 @@ defmodule Test.MixProject do
   end
 
   def escript do
-    [main_module: Test.CLI]
+    [main_module: Foo.CLI]
   end
 end
